@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class Camera_Controller : MonoBehaviour
 {
-
-
-    [SerializeField] GameObject player;
-
-    // Start is called before the first frame update
+    public Transform target; 
+    public float smoothSpeed = 5.0f; 
+    private Vector3 offset; 
     void Start()
     {
-        
+        offset = transform.position - target.position;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        transform.position = new Vector3(player.transform.position.x, transform. position.y, transform.position.z);
+        Vector3 targetPosition = target.position + offset;
+        transform.position = Vector3.Lerp(transform.position, targetPosition, smoothSpeed * Time.fixedDeltaTime);
     }
 }
