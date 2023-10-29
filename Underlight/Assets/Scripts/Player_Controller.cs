@@ -76,9 +76,41 @@ public class Player_Controller : MonoBehaviour
         if(isGrounded == true){
             extraJumps = numberOfExtraJumps;
         }
+
+
+ #region WallJumping
+        checkWall();
+        if (isOnWall == true && isGrounded == false && moveInput != 0){
+            wallSliding = true;
+        }else{
+            wallSliding = false;
+        }
+
+        if(wallSliding){
+            rigidBody.velocity = new Vector2(rigidBody.velocity.x, Mathf.Clamp(rigidBody.velocity.y, -wallSlidingSpeed, float.MaxValue));
+        }
+
+        if(Input.GetKeyDown(KeyCode.W) && wallSliding == true){
+            wallJumping = true;
+            //Get the direction the player was facing while on wall
+            wallJumpStoredInput = -moveInput;
+            print("Starting wall jump");
+            Invoke("setWallJumpingFalse", wallJumpTime);
+        }
+        
+        #endregion
+
+
+
     }
 
     void FixedUpdate(){
+
+        if(wallJumping == true){
+           print("Wall Jumping");
+            rigidBody.velocity = new Vector2(wallJumpForceX * wallJumpStoredInput, wallJumpForceY);
+            return;
+        }
         
         #region PlayerMovement
         //Gets left right input left -1 right 1
@@ -104,30 +136,7 @@ public class Player_Controller : MonoBehaviour
         #endregion
 
 
-        #region WallJumping
-        checkWall();
-        if (isOnWall == true && isGrounded == false && moveInput != 0){
-            wallSliding = true;
-        }else{
-            wallSliding = false;
-        }
-
-        if(wallSliding){
-            rigidBody.velocity = new Vector2(rigidBody.velocity.x, Mathf.Clamp(rigidBody.velocity.y, -wallSlidingSpeed, float.MaxValue));
-        }
-
-        if(Input.GetKeyDown(KeyCode.W) && wallSliding == true){
-            wallJumping = true;
-            //Get the direction the player was facing while on wall
-            wallJumpStoredInput = -moveInput;
-            print("Starting wall jump");
-            Invoke("setWallJumpingFalse", wallJumpTime);
-        }
-        if(wallJumping == true){
-           print("Wall Jumping");
-            rigidBody.velocity = new Vector2(wallJumpForceX * wallJumpStoredInput, wallJumpForceY);
-        }
-        #endregion
+       
        
        #region Teleport
 
