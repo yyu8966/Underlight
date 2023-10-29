@@ -15,7 +15,7 @@ public class Player_Controller : MonoBehaviour
     [SerializeField] private int numberOfExtraJumps;
     [SerializeField] private int maxVelocity;
     [SerializeField] private bool snappierMovement;
-    [SerializeField] private float jumpGracePeriod;
+     [Header("Wall Jump Stats Adjustable")]
     [SerializeField] private float wallSlidingSpeed;
     [SerializeField] private float wallJumpForceX;
     [SerializeField] private float wallJumpForceY;
@@ -33,12 +33,12 @@ public class Player_Controller : MonoBehaviour
 
     private bool isGrounded;
     private bool isOnWall;
-    private float timeOnWall;
+   
     private bool wallSliding;
     private bool wallJumping;
     private float wallJumpStoredInput;
 
-    private bool teleportCooldown = false;
+   
 
 
     private float moveInput;    
