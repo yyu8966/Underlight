@@ -38,7 +38,7 @@ public class Player_Controller : MonoBehaviour
     private bool wallJumping;
     private float wallJumpStoredInput;
 
-   
+    private bool teleportCooldown = false;
 
 
     private float moveInput;    
