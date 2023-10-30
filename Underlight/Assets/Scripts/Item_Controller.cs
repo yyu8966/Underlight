@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Item_Controller : MonoBehaviour
 {
+    
     // Start is called before the first frame update
 
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject UI_ImageOne;
     private float moveAmount;
     void Start(){
         moveAmount = -.1f;
@@ -22,11 +24,12 @@ public class Item_Controller : MonoBehaviour
         
     }
 
-      void OnTriggerStay2D(Collider2D other){
+    void OnTriggerStay2D(Collider2D other){
         print("collision entered");
         if(other.gameObject.tag == "Player"){
             if(Input.GetKeyDown(KeyCode.F)){
                  print("item collected");
+                 UI_ImageOne.SetActive(true);
                  Destroy(gameObject);
             }
         }
