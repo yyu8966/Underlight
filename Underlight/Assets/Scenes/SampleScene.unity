@@ -6683,6 +6683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea8f4c8a3565aa4d940f8df8d951a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 339292984}
 --- !u!60 &1242538705
 PolygonCollider2D:
   m_ObjectHideFlags: 0
