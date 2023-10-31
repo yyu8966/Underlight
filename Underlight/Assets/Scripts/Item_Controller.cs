@@ -25,7 +25,7 @@ public class Item_Controller : MonoBehaviour
     }
 
     void OnTriggerStay2D(Collider2D other){
-        print("collision entered");
+        //print("collision entered");
         if(other.gameObject.tag == "Player"){
             if(Input.GetKeyDown(KeyCode.F)){
                  print("item collected");
