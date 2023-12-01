@@ -1,12 +1,15 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Item_Controller : MonoBehaviour
 {
     
     // Start is called before the first frame update
-
+    public int targetItemCount = 6;
+    private int collectedItemCount = 0;
+    public Text winText;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject UI_ImageOne;
     private float moveAmount;
@@ -23,18 +26,26 @@ public class Item_Controller : MonoBehaviour
       
         
     }
-
+    
     void OnTriggerStay2D(Collider2D other){
         //print("collision entered");
         if(other.gameObject.tag == "Player"){
             //if(Input.GetKeyDown(KeyCode.F)){
                  print("item collected");
                  UI_ImageOne.SetActive(true);
+                 collectedItemCount++;
                  Destroy(gameObject);
            // }
+           if (collectedItemCount >= targetItemCount)
+            {
+                WinGame();
+            }
         }
      }
-
+     void WinGame(){
+        Debug.Log("Win！");
+        winText.text = "You Win！";
+    }
     private void startMoveDown(){
         moveAmount = .25f;
         Invoke("startMoveUp", 1);
@@ -44,5 +55,4 @@ public class Item_Controller : MonoBehaviour
         moveAmount = -.25f;
         Invoke("startMoveDown", 1);
     }
-
 }
