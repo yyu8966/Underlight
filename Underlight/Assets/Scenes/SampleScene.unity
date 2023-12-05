@@ -2279,6 +2279,7 @@ MonoBehaviour:
   winText: {fileID: 0}
   player: {fileID: 339292984}
   UI_ImageOne: {fileID: 789467576}
+  door: {fileID: 0}
 --- !u!212 &208668742
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12576,6 +12577,7 @@ MonoBehaviour:
   winText: {fileID: 0}
   player: {fileID: 339292984}
   UI_ImageOne: {fileID: 789467576}
+  door: {fileID: 0}
 --- !u!212 &996063638
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12790,6 +12792,7 @@ MonoBehaviour:
   winText: {fileID: 0}
   player: {fileID: 339292984}
   UI_ImageOne: {fileID: 789467576}
+  door: {fileID: 0}
 --- !u!212 &1008200210
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13376,6 +13379,7 @@ MonoBehaviour:
   winText: {fileID: 0}
   player: {fileID: 339292984}
   UI_ImageOne: {fileID: 789467576}
+  door: {fileID: 0}
 --- !u!212 &1057518003
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19388,6 +19392,7 @@ MonoBehaviour:
   winText: {fileID: 0}
   player: {fileID: 339292984}
   UI_ImageOne: {fileID: 2140105714}
+  door: {fileID: 0}
 --- !u!212 &1646748978
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20315,6 +20320,7 @@ MonoBehaviour:
   winText: {fileID: 0}
   player: {fileID: 339292984}
   UI_ImageOne: {fileID: 789467576}
+  door: {fileID: 0}
 --- !u!212 &1775041553
 SpriteRenderer:
   m_ObjectHideFlags: 0

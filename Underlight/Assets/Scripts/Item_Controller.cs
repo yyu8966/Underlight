@@ -8,10 +8,12 @@ public class Item_Controller : MonoBehaviour
     
     // Start is called before the first frame update
     public int targetItemCount = 6;
+   
     private int collectedItemCount = 0;
     public Text winText;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject UI_ImageOne;
+    [SerializeField] private GameObject door;
     private float moveAmount;
     void Start(){
         moveAmount = -.1f;
@@ -35,10 +37,13 @@ public class Item_Controller : MonoBehaviour
                  UI_ImageOne.SetActive(true);
                  collectedItemCount++;
                  Destroy(gameObject);
+                 print(collectedItemCount);
+                 print(targetItemCount);
            // }
            if (collectedItemCount >= targetItemCount)
             {
-                WinGame();
+                openDoor();
+               // WinGame();
             }
         }
      }
@@ -54,5 +59,13 @@ public class Item_Controller : MonoBehaviour
     private void startMoveUp(){
         moveAmount = -.25f;
         Invoke("startMoveDown", 1);
+    }
+    private void openDoor(){
+        print("door opening");
+        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("door");
+         foreach (GameObject obj in objectsWithTag)
+        {
+            Destroy(obj);
+        }
     }
 }
