@@ -44,7 +44,6 @@ public class Player_Controller : MonoBehaviour
     private float moveInput;    
     private Rigidbody2D rigidBody;
     private bool facingRight = true;
-    
    
     
     void Start()
