@@ -9,7 +9,13 @@ public class Item_Controller : MonoBehaviour
 
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject UI_ImageOne;
+    [SerializeField] private GameObject Door;
     private float moveAmount;
+
+    private int targetItemCount = 4;
+
+    private int collectedItemCount = 0;
+
     void Start(){
         moveAmount = -.1f;
         startMoveUp();
@@ -30,6 +36,11 @@ public class Item_Controller : MonoBehaviour
             //if(Input.GetKeyDown(KeyCode.F)){
                  print("item collected");
                  UI_ImageOne.SetActive(true);
+                 collectedItemCount++;
+                 print(collectedItemCount);
+                 if(collectedItemCount == targetItemCount){
+                    doorOpen();
+                 }
                  Destroy(gameObject);
            // }
         }
@@ -43,6 +54,11 @@ public class Item_Controller : MonoBehaviour
     private void startMoveUp(){
         moveAmount = -.25f;
         Invoke("startMoveDown", 1);
+    }
+
+    private void doorOpen(){
+        print("door opening");
+        Destroy(Door);
     }
 
 }
