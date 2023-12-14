@@ -60,7 +60,7 @@ public class Player_Controller : MonoBehaviour
     {
 
        checkGrounded();
-     
+        if(wallSliding == false){
        //jumps if the player is on ground or has extra jumps
         if((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) )&& isGrounded == true ){
             rigidBody.velocity = Vector2.up * jumpHeight;
@@ -75,7 +75,7 @@ public class Player_Controller : MonoBehaviour
         if(isGrounded == true){
             extraJumps = numberOfExtraJumps;
         }
-
+        }
 
  #region WallJumping
         checkWall();
