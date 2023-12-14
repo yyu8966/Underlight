@@ -11,3 +11,9 @@ Collect all the objects around the map to escape before the evil creature in the
 Licensing
 -
 All Sprite Assets are from the Unity Asset Store
+
+Group 22
+Primary Programmer:  	Jon Heinze
+Primary Level Design: 	Yuepei Yu
+Primary artist:		Michelle Sobolewski
+AI Component: 		Nicole Wiktor
