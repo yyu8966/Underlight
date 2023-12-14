@@ -7,6 +7,7 @@ public class MainMenu_Buttons : MonoBehaviour{
 
     //variables set up 
     public string nextScene;
+    public string instructionpage;
 
     //methods for all of the buttons on the main menu
     public void Start_Button(){
@@ -15,6 +16,10 @@ public class MainMenu_Buttons : MonoBehaviour{
 
     public void Exit_Button(){
         Application.Quit();
+    }
+
+    public void Instuctions(){
+        SceneManager.LoadScene(instructionpage);
     }
 
     //will add credits screen and controls screen later
